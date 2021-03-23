@@ -131,7 +131,9 @@ class Evaluate:
     for j in cluster:
       if i is not j:
         d += self.model.get_distance(i,j)
-    
+    if len(cluster)==1: 
+      return 1 
+      
     return d/(len(cluster)-1)
     
   def separation(self,cluster_id,i,clusters):
